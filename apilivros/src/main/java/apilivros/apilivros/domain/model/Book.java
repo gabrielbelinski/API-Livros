@@ -12,11 +12,8 @@ import jakarta.persistence.ManyToOne;
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idLivro")
+    @Column(name = "idBook")
     private Long id;
-    @ManyToOne
-    @JoinColumn(name = "idUsuario")
-    private User usuario;
     @Column(nullable = false)
     private String autor;
     @Column(nullable = false)
@@ -27,6 +24,9 @@ public class Book {
     private String cidade;
     @Column(nullable = false)
     private Integer ano;
+    @ManyToOne
+    @JoinColumn(name = "idUser")
+    private User usuario;
     
     public Long getId() {
         return id;

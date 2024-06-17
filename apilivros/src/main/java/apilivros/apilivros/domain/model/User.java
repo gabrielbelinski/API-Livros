@@ -7,18 +7,19 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 
 
 @Entity
+@Table(name = "users")
 public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idUsuario")
+    @Column(name = "idUser")
     private Long id;
     private String nome;
     @Column(nullable = false, unique = true)
@@ -28,8 +29,8 @@ public class User implements UserDetails {
     @Column(nullable = false)
     private Date dataCadastro;
     private Date dataInativacao;
-    @OneToMany(mappedBy = "usuario", fetch = FetchType.EAGER)
-    private List<Book> livros;
+    @OneToMany(mappedBy = "usuario")
+    private List<Book> books;
 
     public Long getId() {
         return id;
@@ -68,11 +69,11 @@ public class User implements UserDetails {
     public void setDataInativacao(Date dataInativacao) {
         this.dataInativacao = dataInativacao;
     }
-    public List<Book> getLivros() {
-        return livros;
+    public List<Book> getBooks() {
+        return books;
     }
-    public void setLivros(List<Book> livros) {
-        this.livros = livros;
+    public void setLivros(List<Book> books) {
+        this.books = books;
     }
 
     @Override

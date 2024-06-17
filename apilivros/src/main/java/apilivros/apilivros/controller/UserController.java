@@ -20,7 +20,7 @@ import apilivros.apilivros.domain.service.UserService;
 
 @CrossOrigin("*")
 @RestController
-@RequestMapping("/api/usuarios")
+@RequestMapping("/api/users")
 public class UserController {
 
     @Autowired

@@ -47,6 +47,7 @@ public class JwtAuthorizationFilter
     getAuthenticationToken(String token){
         if(jwtUtil.isValidToken(token)){
             String email = jwtUtil.getUserName(token);
+            System.out.println("oi");
             User usuario = (User)
             userDetailsSecurityServer.loadUserByUsername(email);
             return new UsernamePasswordAuthenticationToken(usuario,

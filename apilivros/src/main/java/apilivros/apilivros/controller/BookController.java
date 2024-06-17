@@ -20,7 +20,7 @@ import apilivros.apilivros.domain.service.BookService;
 
 @CrossOrigin("*")
 @RestController
-@RequestMapping("/api/livros")
+@RequestMapping("/api/books")
 public class BookController {
     
     @Autowired
