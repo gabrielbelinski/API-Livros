@@ -7,7 +7,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 
-import apilivros.apilivros.domain.model.Usuario;
+import apilivros.apilivros.domain.model.User;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -47,7 +47,7 @@ public class JwtAuthorizationFilter
     getAuthenticationToken(String token){
         if(jwtUtil.isValidToken(token)){
             String email = jwtUtil.getUserName(token);
-            Usuario usuario = (Usuario)
+            User usuario = (User)
             userDetailsSecurityServer.loadUserByUsername(email);
             return new UsernamePasswordAuthenticationToken(usuario,
              null, usuario.getAuthorities());

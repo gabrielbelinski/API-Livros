@@ -1,8 +1,8 @@
-package apilivros.apilivros.domain.dto.usuario;
+package apilivros.apilivros.domain.dto.user;
 
 public class LoginResponseDTO {
     private String token;
-    private UsuarioResponseDTO usuario;
+    private UserResponseDTO usuario;
     
     public String getToken() {
         return token;
@@ -10,10 +10,10 @@ public class LoginResponseDTO {
     public void setToken(String token) {
         this.token = token;
     }
-    public UsuarioResponseDTO getUsuario() {
+    public UserResponseDTO getUsuario() {
         return usuario;
     }
-    public void setUsuario(UsuarioResponseDTO usuario) {
+    public void setUsuario(UserResponseDTO usuario) {
         this.usuario = usuario;
     }
 }

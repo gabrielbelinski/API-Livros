@@ -13,11 +13,11 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 
 import apilivros.apilivros.common.ConversorData;
-import apilivros.apilivros.domain.dto.usuario.LoginRequestDTO;
-import apilivros.apilivros.domain.dto.usuario.LoginResponseDTO;
-import apilivros.apilivros.domain.dto.usuario.UsuarioResponseDTO;
-import apilivros.apilivros.domain.model.ErroResposta;
-import apilivros.apilivros.domain.model.Usuario;
+import apilivros.apilivros.domain.dto.user.LoginRequestDTO;
+import apilivros.apilivros.domain.dto.user.LoginResponseDTO;
+import apilivros.apilivros.domain.dto.user.UserResponseDTO;
+import apilivros.apilivros.domain.model.ReplyError;
+import apilivros.apilivros.domain.model.User;
 
 import java.io.IOException;
 import java.util.Date;
@@ -65,9 +65,9 @@ extends UsernamePasswordAuthenticationFilter {
     protected void successfulAuthentication(HttpServletRequest request,
     HttpServletResponse response, FilterChain chain, 
     Authentication authResult)throws IOException{
-        Usuario usuario = (Usuario) authResult.getPrincipal();
+        User usuario = (User) authResult.getPrincipal();
         String token = jwtUtil.gerarToken(authResult);
-        UsuarioResponseDTO usuarioResponse = new UsuarioResponseDTO();
+        UserResponseDTO usuarioResponse = new UserResponseDTO();
         usuarioResponse.setId(usuario.getId());
         usuarioResponse.setNome(usuario.getNome());
         usuarioResponse.setDataCadastro(usuario.getDataCadastro());
@@ -88,7 +88,7 @@ extends UsernamePasswordAuthenticationFilter {
     throws IOException, ServletException{
         String dataHora = ConversorData
         .converterDateParaDataHora(new Date());
-        ErroResposta erro = new ErroResposta(dataHora,
+        ReplyError erro = new ReplyError(dataHora,
          401, "Unauthorized", failed.getMessage());
         response.setStatus(401);
         response.setCharacterEncoding("UTF-8");

@@ -1,17 +1,12 @@
-package apilivros.apilivros.domain.dto.livro;
+package apilivros.apilivros.domain.dto.book;
 
-import java.util.List;
+public class BookRequestDTO {
 
-import apilivros.apilivros.domain.model.Usuario;
-
-public class LivroRequestDTO {
-    private List<Usuario> usuarios;
     private String autor;
-    
     private String titulo;
     private String editora;
     private String cidade;
-    private String ano;
+    private Integer ano;
 
     public String getAutor() {
         return autor;
@@ -20,34 +15,31 @@ public class LivroRequestDTO {
         this.autor = autor;
     }
     
-    public List<Usuario> getUsuarios() {
-        return usuarios;
-    }
-    public void setUsuarios(List<Usuario> usuarios) {
-        this.usuarios = usuarios;
-    }
     public String getTitulo() {
         return titulo;
     }
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
+
     public String getEditora() {
         return editora;
     }
     public void setEditora(String editora) {
         this.editora = editora;
     }
+
     public String getCidade() {
         return cidade;
     }
     public void setCidade(String cidade) {
         this.cidade = cidade;
     }
-    public String getAno() {
+    
+    public Integer getAno() {
         return ano;
     }
-    public void setAno(String ano) {
+    public void setAno(Integer ano) {
         this.ano = ano;
     }
 }

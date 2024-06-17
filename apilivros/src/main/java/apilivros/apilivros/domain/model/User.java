@@ -7,16 +7,15 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 
 
 @Entity
-public class Usuario implements UserDetails {
+public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idUsuario")
@@ -29,13 +28,8 @@ public class Usuario implements UserDetails {
     @Column(nullable = false)
     private Date dataCadastro;
     private Date dataInativacao;
-    @ManyToMany
-    @JoinTable(
-        name = "usuario_livro",
-        joinColumns = {@JoinColumn(name="idUsuario")},
-        inverseJoinColumns = {@JoinColumn(name = "idLivro")}
-    )
-    private List<Livro> livros;
+    @OneToMany(mappedBy = "usuario", fetch = FetchType.EAGER)
+    private List<Book> livros;
 
     public Long getId() {
         return id;
@@ -74,16 +68,13 @@ public class Usuario implements UserDetails {
     public void setDataInativacao(Date dataInativacao) {
         this.dataInativacao = dataInativacao;
     }
-    public List<Livro> getLivros() {
+    public List<Book> getLivros() {
         return livros;
     }
-    public void setLivros(List<Livro> livros) {
+    public void setLivros(List<Book> livros) {
         this.livros = livros;
     }
 
-    /**
-     * Métodos da Interface User Details do SpringBoot
-   */
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
        return null;

@@ -1,4 +1,4 @@
-package apilivros.apilivros.domain.dto.usuario;
+package apilivros.apilivros.domain.dto.user;
 
 public class LoginRequestDTO {
     private String email;

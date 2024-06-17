@@ -4,10 +4,10 @@ import java.util.List;
 
 public interface ICRUDService<Request, Response> {
 
-    List<Response> obterTodos();
-    Response obterPorId(Long id);
-    Response cadastrar(Request dto);
-    Response atualizar(Long id, Request dto);
-    void deletar(Long id);
+    List<Response> getAll();
+    Response getById(Long id);
+    Response create(Request dto);
+    Response update(Long id, Request dto);
+    void delete(Long id);
     
 }

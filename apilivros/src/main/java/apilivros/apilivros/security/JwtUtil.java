@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
 
-import apilivros.apilivros.domain.model.Usuario;
+import apilivros.apilivros.domain.model.User;
 
 import java.security.Key;
 
@@ -24,7 +24,7 @@ public class JwtUtil {
    public String gerarToken(Authentication authentication){
     Date dataExpiracao = new Date(new Date().getTime() +
     jwtExpirationMilliseg);
-    Usuario usuario = (Usuario) authentication.getPrincipal();
+    User usuario = (User) authentication.getPrincipal();
     try{
         Key secretKey = Keys.hmacShaKeyFor(jwtSecret
         .getBytes("UTF-8"));

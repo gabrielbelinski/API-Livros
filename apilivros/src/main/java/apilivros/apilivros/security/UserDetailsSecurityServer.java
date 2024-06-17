@@ -8,20 +8,20 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 
-import apilivros.apilivros.domain.model.Usuario;
-import apilivros.apilivros.domain.repository.UsuarioRepository;
+import apilivros.apilivros.domain.model.User;
+import apilivros.apilivros.domain.repository.UserRepository;
 
 
 @Component
 public class UserDetailsSecurityServer 
                 implements UserDetailsService {
     @Autowired
-    private UsuarioRepository usuarioRepository;
+    private UserRepository usuarioRepository;
 
     @Override
     public UserDetails loadUserByUsername(String username) 
             throws UsernameNotFoundException {
-        Optional<Usuario> optUsuario = usuarioRepository
+        Optional<User> optUsuario = usuarioRepository
         .findByEmail(username);
         if(optUsuario.isEmpty()){
             throw new UsernameNotFoundException("Usuário ou Senha Inválidos");
