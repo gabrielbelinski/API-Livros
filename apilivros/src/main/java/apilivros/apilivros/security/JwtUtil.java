@@ -1,12 +1,14 @@
-package com.meusgastosta.meusgastosta.security;
+package apilivros.apilivros.security;
 
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
+
+import apilivros.apilivros.domain.model.Usuario;
+
 import java.security.Key;
-import com.meusgastosta.meusgastosta.domain.model.Usuario;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

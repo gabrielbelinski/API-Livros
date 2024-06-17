@@ -1,11 +1,21 @@
-package com.meusgastosta.meusgastosta.domain.dto.usuario;
+package apilivros.apilivros.domain.dto.usuario;
+
+import java.util.List;
+
+import apilivros.apilivros.domain.model.Livro;
 
 public class UsuarioRequestDTO {
     private String nome;
     private String email;
     private String senha;
-    private String foto;
+    private List<Livro> livros;
     
+    public List<Livro> getLivros() {
+        return livros;
+    }
+    public void setLivros(List<Livro> livros) {
+        this.livros = livros;
+    }
     public String getNome() {
         return nome;
     }
@@ -23,12 +33,6 @@ public class UsuarioRequestDTO {
     }
     public void setSenha(String senha) {
         this.senha = senha;
-    }
-    public String getFoto() {
-        return foto;
-    }
-    public void setFoto(String foto) {
-        this.foto = foto;
     }
 
 

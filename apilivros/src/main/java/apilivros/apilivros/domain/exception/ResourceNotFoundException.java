@@ -1,4 +1,4 @@
-package com.meusgastosta.meusgastosta.domain.exception;
+package apilivros.apilivros.domain.exception;
 
 public class ResourceNotFoundException 
             extends RuntimeException{

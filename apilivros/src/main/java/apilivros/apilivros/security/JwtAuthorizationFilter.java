@@ -1,4 +1,4 @@
-package com.meusgastosta.meusgastosta.security;
+package apilivros.apilivros.security;
 
 import java.io.IOException;
 
@@ -7,8 +7,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 
-import com.meusgastosta.meusgastosta.domain.model.Usuario;
-
+import apilivros.apilivros.domain.model.Usuario;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

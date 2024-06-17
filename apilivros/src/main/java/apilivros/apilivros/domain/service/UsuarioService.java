@@ -1,4 +1,4 @@
-package com.meusgastosta.meusgastosta.domain.service;
+package apilivros.apilivros.domain.service;
 
 import java.util.Date;
 import java.util.List;
@@ -10,13 +10,12 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import apilivros.apilivros.domain.dto.usuario.*;
+import apilivros.apilivros.domain.exception.BadRequestException;
+import apilivros.apilivros.domain.exception.ResourceNotFoundException;
+import apilivros.apilivros.domain.repository.UsuarioRepository;
+import apilivros.apilivros.domain.model.Usuario;
 
-import com.meusgastosta.meusgastosta.domain.dto.usuario.UsuarioRequestDTO;
-import com.meusgastosta.meusgastosta.domain.dto.usuario.UsuarioResponseDTO;
-import com.meusgastosta.meusgastosta.domain.exception.BadRequestException;
-import com.meusgastosta.meusgastosta.domain.exception.ResourceNotFoundException;
-import com.meusgastosta.meusgastosta.domain.model.Usuario;
-import com.meusgastosta.meusgastosta.domain.repository.UsuarioRepository;
 
 @Service
 public class UsuarioService implements 

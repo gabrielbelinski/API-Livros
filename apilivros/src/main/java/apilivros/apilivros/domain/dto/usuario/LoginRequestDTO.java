@@ -1,4 +1,4 @@
-package com.meusgastosta.meusgastosta.domain.dto.usuario;
+package apilivros.apilivros.domain.dto.usuario;
 
 public class LoginRequestDTO {
     private String email;

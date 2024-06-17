@@ -1,4 +1,4 @@
-package com.meusgastosta.meusgastosta.security;
+package apilivros.apilivros.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

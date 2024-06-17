@@ -1,4 +1,4 @@
-package com.meusgastosta.meusgastosta.security;
+package apilivros.apilivros.security;
 
 import java.util.Optional;
 
@@ -8,8 +8,9 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 
-import com.meusgastosta.meusgastosta.domain.model.Usuario;
-import com.meusgastosta.meusgastosta.domain.repository.UsuarioRepository;
+import apilivros.apilivros.domain.model.Usuario;
+import apilivros.apilivros.domain.repository.UsuarioRepository;
+
 
 @Component
 public class UserDetailsSecurityServer 

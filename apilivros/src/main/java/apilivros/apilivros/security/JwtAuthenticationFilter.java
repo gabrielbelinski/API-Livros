@@ -1,4 +1,4 @@
-package com.meusgastosta.meusgastosta.security;
+package apilivros.apilivros.security;
 
 
 import org.springframework.security.authentication.AuthenticationManager;
@@ -11,12 +11,13 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
-import com.meusgastosta.meusgastosta.common.ConversorData;
-import com.meusgastosta.meusgastosta.domain.dto.usuario.LoginRequestDTO;
-import com.meusgastosta.meusgastosta.domain.dto.usuario.LoginResponseDTO;
-import com.meusgastosta.meusgastosta.domain.dto.usuario.UsuarioResponseDTO;
-import com.meusgastosta.meusgastosta.domain.model.ErroResposta;
-import com.meusgastosta.meusgastosta.domain.model.Usuario;
+
+import apilivros.apilivros.common.ConversorData;
+import apilivros.apilivros.domain.dto.usuario.LoginRequestDTO;
+import apilivros.apilivros.domain.dto.usuario.LoginResponseDTO;
+import apilivros.apilivros.domain.dto.usuario.UsuarioResponseDTO;
+import apilivros.apilivros.domain.model.ErroResposta;
+import apilivros.apilivros.domain.model.Usuario;
 
 import java.io.IOException;
 import java.util.Date;
@@ -69,7 +70,6 @@ extends UsernamePasswordAuthenticationFilter {
         UsuarioResponseDTO usuarioResponse = new UsuarioResponseDTO();
         usuarioResponse.setId(usuario.getId());
         usuarioResponse.setNome(usuario.getNome());
-        usuarioResponse.setFoto(usuario.getFoto());
         usuarioResponse.setDataCadastro(usuario.getDataCadastro());
         usuarioResponse.setDataInativacao(usuario.getDataInativacao());
         LoginResponseDTO loginResponseDTO = new LoginResponseDTO();
