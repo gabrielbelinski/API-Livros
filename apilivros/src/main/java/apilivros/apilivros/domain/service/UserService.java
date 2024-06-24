@@ -70,7 +70,8 @@ public class UserService implements ICRUDService<UserRequestDTO, UserResponseDTO
           }
         User usuario = mapper
        .map(dto, User.class);
-       usuario.setSenha(dto.getSenha());
+       String senha = bCryptPasswordEncoder.encode(dto.getSenha());
+       usuario.setSenha(senha);
        usuario.setId(id);
        usuario.setDataCadastro(usuarioBanco.getDataCadastro());
        usuario.setDataInativacao(usuarioBanco.getDataInativacao());
